@@ -28,9 +28,15 @@ const generatePassword = (length, useSpecialChars, includeNumbers, includeUpperc
 rl.question('Wie lang soll das Passwort sein? ', (length) => {
     length = parseInt(length);
     rl.question('Sonderzeichen einbeziehen? (ja/nein) ', (useSpecialChars) => {
+        // Parse input as boolean
+        useSpecialChars = useSpecialChars === 'ja';
         rl.question('Zahlen einbeziehen? (ja/nein) ', (includeNumbers) => {
+            // Parse input as boolean
+            includeNumbers = includeNumbers === 'ja';
             rl.question('Großbuchstaben einbeziehen? (ja/nein) ', (includeUppercase) => {
-                const password = generatePassword(length, useSpecialChars === 'ja', includeNumbers === 'ja', includeUppercase === 'ja');
+                // Parse input as boolean
+                includeUppercase = includeUppercase === 'ja';
+                const password = generatePassword(length, useSpecialChars, includeNumbers, includeUppercase);
                 console.log(`Generiertes Passwort: ${password}`);
                 rl.close();
             });
