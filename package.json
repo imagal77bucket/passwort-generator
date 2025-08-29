@@ -1,7 +1,7 @@
 {
   "name": "passwort-generator",
   "version": "1.0.0",
-  "description": "Ein einfaches Passwort-Generator-Tool zur Verbesserung der Passwortsicherheit.",
+  "description": "A simple password generator tool to enhance password security.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
